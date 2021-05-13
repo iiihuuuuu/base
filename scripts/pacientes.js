@@ -60,8 +60,9 @@ $(document).ready(() => {
 					});
 				},
 				success: function(result, status, xhr){
-					setTimeout(()=>{
-						if(status == "success" && xhr.status == 200){
+					console.log(result, status, xhr)
+					if(status === "success" && xhr.status === 200){
+						setTimeout(()=>{
 							Swal.fire({
 								title: "Paciente Cadastrado!",
 								text: "Clique em OK para sair.",
@@ -69,14 +70,22 @@ $(document).ready(() => {
 								allowEscapeKey: false,
 								allowOutsideClick: false
 							}).then((res)=>{
-								console.log(res);
 								if(res.isConfirmed == true){
 									$('#reset').click();
 									console.log(result);
 								}
 							});
-						}
-					}, 3000);
+						}, 2000);
+					}else{
+						Swal.fire({
+							title: "Erro ao cadastrar o paciente",
+							text: "Tente novamente ou comunique o setor de SUPORTE!",
+							icon: "error",
+							showConfirmButton: true,
+							allowOutsideClick: false,
+							allowEscapeKey: false
+						});
+					}
 				},
 				error: function(xhr, status, error){
 					console.log(error, status, xhr);

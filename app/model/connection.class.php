@@ -57,5 +57,12 @@ abstract class Connection {
 	public function getConnection() {
 		return $this->connect();
 	}
+
+	public function insert($insert, $values){
+	  $sql = "INSERT INTO vw_ultimas_datas (".implode(", ", $insert).") VALUES ('".implode("', '", $values)."')";
+	  $stm = $this->connect()->prepare($sql);
+	  $stm->execute();
+	  return $stm;
+	}
       
 }

@@ -1,3 +1,9 @@
+<?php require_once 'app/autoload.php';
+$d = new database();
+$d->insert(array("id_tb_unidades", "dh_ultimo_lancamento", "dh_penultimo_lancamento"), array(44, "554", "lffiçs"));
+
+?>
+
 <div class="containerPaciente"> 
   <div class="tabs"> 
 
