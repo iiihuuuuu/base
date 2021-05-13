@@ -30,13 +30,15 @@ $d->insert(array("id_tb_unidades", "dh_ultimo_lancamento", "dh_penultimo_lancame
 
               <div class="coluna-formulario1">
 
-                <div id="teste" class="inputs inputs-aviso"> 
+                <div class="inputs inputs-aviso"> 
                   <input type="text" name="cpf" id="cpf" class="valida-numero validar" minlength="11" maxlength="15" placeholder=" ">
                   <label for="cpf">CPF</label>
                 </div>  
 
-                <div class="inputs inputs-aviso">  
-                  <input type="text" name="nomePaciente" id="nomePaciente" class="valida-texto validar" maxlength="150" placeholder=" ">
+                <div class="inputs inputs-aviso">
+                <input type="checkbox" name="" id="valida_nome">  
+                  <input type="text" name="nomePaciente" id="nomePaciente" class="valida-texto validar campo_vazio" maxlength="150" placeholder=" ">
+                  <p id="aviso-nome"></p>
                   <label for="nomePaciente">Nome</label> 
                 </div>
 
@@ -53,13 +55,13 @@ $d->insert(array("id_tb_unidades", "dh_ultimo_lancamento", "dh_penultimo_lancame
                    <label for="idade">Data de Nascimento</label> 
                 </div>
 
-                 <div class="inputs inputs-aviso">
-                   <input type="text" class="pacienteConvenio valida-texto validar" name="pacienteConvenio" id="pacienteConvenio" placeholder=" ">
+                 <div class="inputs">
+                   <input type="text" class="pacienteConvenio valida-texto" name="pacienteConvenio" id="pacienteConvenio" placeholder=" ">
                    <label for="pacienteConvenio">Convênio</label> 
                 </div>  
 
-                <div class="inputs inputs-aviso">  
-                   <input type="text" class="nCarteirinha valida-numero validar" name="nCarteirinha" id="nCarteirinha" placeholder=" ">
+                <div class="inputs">  
+                   <input type="text" class="nCarteirinha valida-numero" name="nCarteirinha" id="nCarteirinha" placeholder=" ">
                    <label for="nCarteirinha">Carteirinha</label> 
                 </div>
 
