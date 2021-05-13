@@ -1,0 +1,190 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+/* RESETS */ 
+
+a, p, li, ul, td, tr, img, h1, h3{
+	margin: 0px;
+	padding: 0px;
+}
+ul, a, li {
+	list-style: none;
+    text-decoration: none;
+}
+input{
+	outline: none;
+	box-shadow: none;
+	border: none;
+}	
+input:focus{
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
+body, html{
+	font-family: 'Montserrat', sans-serif;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+}
+
+/* topo */ 
+.topo{
+	display: flex;
+	justify-content: space-between;
+	background-color:  #338eb2;
+
+	align-items: center;
+	color: #fff;
+	padding: 0px 25px;
+}
+.topo .logo img{
+	width: 40%;
+}
+.nome-pagina{
+	flex-grow: 1;
+    height: 100%;
+    font-weight: bold;
+}
+.topo .filhos-menu{
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.topo .login{
+	display: flex;
+	align-items: center;
+}
+.topo i{
+	cursor: pointer;
+}
+.login i{
+	margin-right: 10px;
+}
+.topo .logout i{
+	font-size: 30px;
+	color: #fff;
+}
+/* conteudo */ 
+.container{
+	display: flex;
+	flex-flow: row;
+	height: 100%;
+}
+.conteudo{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	flex-flow: column;
+}
+.titulo{
+	width: 373px;
+	display: flex;
+	align-items: center;
+	align-self: center;
+	flex-flow: column;
+	justify-content: space-around;
+}
+.col1{
+
+	flex-grow: 2;
+}
+.col2{
+	width: 800px;
+	height: 100%;
+	flex-grow: 1;
+	display: none;
+}
+
+/* menu-lateral */
+.menu-lateral{
+	background-color: #fff;
+	display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 17px 0px 30px 0px;
+    width: 100px;
+    box-shadow: 1px 1px 15px #00000024;
+    overflow-x: hidden;
+    transition: width 1s;
+}
+.menu-lateral .icones-principais{
+	display: flex;
+    flex-flow: column;
+    justify-content: center;
+    flex-grow: 1;
+    width: 290px;
+}
+.menu-lateral .icone{
+	cursor: pointer;
+}
+.icone{
+	width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icones-principais .icone{
+ 	width: 100%;
+ 	justify-content: space-evenly;
+ 	padding-top: 20px;
+    padding-bottom: 20px;
+}
+.icones-principais .icone i{
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.icones-principais .icone p{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	color: #333333;
+
+} 	
+.icones-principais .icone:hover{
+	border-left: 6px solid #338eb2;
+}
+.menu-lateral .icone i{
+	font-size: 30px;
+	color: #338eb2;
+}
+
+/* efeito aumenta menu lateral */  
+
+#ativa_menu:checked ~ .menu-lateral{
+	-webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+	width: 250px;
+}
+
+/* BARRA DE SCROLL */ 
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+/* TELAS */ 
+
+
+.tela{
+	display: none;
+}

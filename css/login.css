@@ -1,0 +1,166 @@
+.body-login{
+	background-color: #338eb2;
+}	
+.containerLogin{
+	width: auto;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+.retangulo{
+	display: flex;
+	flex-flow: row wrap;
+	border-radius: 55px;
+	margin-top: 100px;
+	width: 850px;
+	height: 500px;
+    justify-content: space-between;
+}
+.logo{
+	display: flex;
+	align-items: center;
+}
+.boas-vindas{
+	display: flex;
+	flex-grow: 1;
+	margin-right: 150px;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.formulario{
+	display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.titulo h1{
+	color: #fff;
+	font-size: 30px;
+}
+.icone i{
+	color: #fff;
+	font-size: 280px;
+}
+/* EFEITO BACKGROUND */ 
+
+.triangle {
+  position: absolute;
+  background: #fff;
+  height: 14vh;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+.triangle::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 86px 86px 0 86px;
+  border-color: #fff transparent transparent transparent;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+
+/* -------------- */
+
+.containerLogin form{
+	display: flex;
+	flex-flow: column;
+    justify-content: center;
+    width: 400px;	
+}
+.containerLogin form .input{
+	display: flex;
+	flex-flow: column-reverse;
+	color: #fff;
+	margin: 15px 0px;
+	text-transform: uppercase;
+}	
+.containerLogin form input{
+	height: 30px;
+	margin: 10px 0px;
+	text-align: center;
+	border-bottom: 2px solid #fff;
+	padding: 5px 0px;
+	background-color: transparent;
+	font-size: 17px;
+	color: #fff;
+}
+.containerLogin form input:focus{
+	outline: none;
+	box-shadow: none;
+}
+.containerLogin form .input label{
+	font-weight: bold;
+	position: relative;
+	top: 40px;
+	z-index: -1;
+	transition: .5s;
+}
+.containerLogin form input:focus + label{
+	font-weight: bold;
+	transform: translateY(-5px);
+    transition: .5s;
+}	
+.containerLogin form input:not(:placeholder-shown) + label{
+	font-weight: bold;
+	transform: translateY(-5px);
+    transition: .5s;
+}	
+.botao{
+	display: flex;
+	justify-content: center;
+}
+.botao button{
+	background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    width: 150px;
+    padding: 20px;
+    color: #338eb2;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: bold;
+}
+.botao button:hover{
+	background-color: #338eb2;
+	border: 1px solid #fff;
+	color: #fff;
+	transition: .5s;
+}	
+.aviso-login-input{
+	background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+    position: absolute;
+    margin-bottom: 70px;
+    margin-left: -109px;
+    padding: 20px 10px;
+    color: #338eb2;
+}
+.aviso-login-input h3{
+	font-size: 12px;
+}
+.aviso-login-input i{
+	font-size: 31px;
+	margin-bottom: 20px;
+}
+.aviso-login-input::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #fff transparent transparent transparent;
+  left: 50%;
+  transform: translateX(0%) translateY(520%);
+}
+

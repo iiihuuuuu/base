@@ -1,0 +1,77 @@
+.parallax{
+	width: 100%;
+	height: 300px;
+	background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.parallax h3{
+	color: #fff;
+	font-size: 30px;
+}
+
+/* TOPO */
+
+.containerTopo{
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	width: auto;
+	background-color: rgba(0,0,0,.2);
+}
+.containerTopo header{
+	width: 1400px;
+	margin: 0 auto;
+}
+.containerTopo header nav{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0px 40px;
+	height: 100%;
+}
+.containerTopo header nav .logoTopo{
+	width: 180px;
+	margin: 5px 0px;
+}
+.containerTopo header nav .logoTopo img{
+	width: 100%;
+}	
+.containerTopo ul{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 100%;
+}
+.containerTopo ul li{
+	display: flex;
+    align-items: center;
+	padding: 0px 10px;
+	border-radius: 0px 0px 20px 20px;
+	height: 100%;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+	transition: .5s;
+}
+.containerTopo ul a{
+	height: 100%;
+	transition: .5s;
+}	
+.containerTopo ul .iconeRede i{
+	transition: .5s;
+}
+.containerTopo ul li:hover{
+	background-color: #fff;
+	color: #00D6F5;
+	transition: .5s;
+}
+.containerTopo ul li:not(.itens):hover{
+	padding: 0px 20px;
+}	
+.containerTopo ul .iconeRede:hover i{
+	transform: scale(2);
+	transition: .5s;
+}	

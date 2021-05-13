@@ -1,0 +1,166 @@
+#loader{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left:0px;
+	background-color: #eee;
+}
+#loader2{
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left:0px;
+	background-color: #eee;
+}
+.cssload-container {
+	width: 100%;
+	height: 138px;
+	text-align: center;
+}
+.cssload-tube-tunnel {
+	width: 138px;
+	height: 138px;
+	margin: 0 auto;
+	border: 11px solid;
+	border-radius: 50%;
+	border-color: rgb(237,78,30);
+	animation: cssload-scale 1035ms infinite linear;
+	-o-animation: cssload-scale 1035ms infinite linear;
+	-ms-animation: cssload-scale 1035ms infinite linear;
+	-webkit-animation: cssload-scale 1035ms infinite linear;
+	-moz-animation: cssload-scale 1035ms infinite linear;
+}
+@keyframes cssload-scale {
+	0% { transform: scale(0); transform: scale(0); }
+	90% { transform: scale(0.7); transform: scale(0.7); }
+	100% { transform: scale(1); transform: scale(1); }
+}
+@-o-keyframes cssload-scale {
+	0% { -o-transform: scale(0); transform: scale(0); }
+	90% { -o-transform: scale(0.7); transform: scale(0.7); }
+	100% { -o-transform: scale(1); transform: scale(1); }
+}
+@-ms-keyframes cssload-scale {
+	0% { -ms-transform: scale(0); transform: scale(0); }
+	90% { -ms-transform: scale(0.7); transform: scale(0.7); }
+	100% { -ms-transform: scale(1); transform: scale(1); }
+}
+@-webkit-keyframes cssload-scale {
+	0% { -webkit-transform: scale(0); transform: scale(0); }
+	90% { -webkit-transform: scale(0.7); transform: scale(0.7); }
+	100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+@-moz-keyframes cssload-scale {
+	0% { -moz-transform: scale(0); transform: scale(0); }
+	90% { -moz-transform: scale(0.7); transform: scale(0.7); }
+	100% { -moz-transform: scale(1); transform: scale(1); }
+}
+.boingInUp {
+  -webkit-animation-name: boingInUp;
+  animation-name: boingInUp; }
+
+@-webkit-keyframes boingInUp {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(-90deg); }
+  50% {
+    opacity: 1;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(50deg); }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(0deg); } }
+
+@keyframes boingInUp {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(-90deg); }
+  50% {
+    opacity: 1;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(50deg); }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(0deg); } }
+
+.vanishOut {
+  -webkit-animation-name: vanishOut;
+          animation-name: vanishOut; }
+
+@-webkit-keyframes vanishOut {
+  0% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px); }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    -webkit-filter: blur(20px);
+            filter: blur(20px); } }
+
+@keyframes vanishOut {
+  0% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px); }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(2, 2);
+    -webkit-filter: blur(20px);
+            filter: blur(20px); } }
+
+.swap {
+  -webkit-animation-name: swap;
+  animation-name: swap; }
+
+@-webkit-keyframes swap {
+  0% {
+    opacity: 0;
+    transform-origin: 0 100%;
+    transform: scale(0, 0) translate(-700px, 0px); }
+  100% {
+    opacity: 1;
+    transform-origin: 100% 100%;
+    transform: scale(1, 1) translate(0px, 0px); } }
+
+@keyframes swap {
+  0% {
+    opacity: 0;
+    transform-origin: 0 100%;
+    transform: scale(0, 0) translate(-700px, 0px); }
+  100% {
+    opacity: 1;
+    transform-origin: 100% 100%;
+    transform: scale(1, 1) translate(0px, 0px); } }
+
+.listaTabs{
+	animation: boingInUp 1s;
+}
+
+.logo, .unidade, .lista-menu-1, .lista-menu-2, .teste{
+	animation: vanishIn .7s;
+}
+.formulario-login{
+	animation: vanishIn .7s;
+}
+.container-formulario, .container-export{
+	animation: swap .7s;
+}
