@@ -12,6 +12,7 @@ for (var a = 0; a < icones.length; a++){
 		
 		var tela_mostra = this.id.split('-', 1);
 		document.getElementById(tela_mostra).style.display = "block";
+		document.getElementById("titulo-pagina").innerHTML = tela_mostra;
 	}	
 }
 

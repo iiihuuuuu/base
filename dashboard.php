@@ -30,23 +30,23 @@
 
 			<div class="icones-principais">
 
-				<div class="icone icone-lateral" id="paciente-icone">
+				<div class="icone icone-lateral" id="Pacientes-icone">
 					<i class="fas fa-user-injured"></i>
 					<p>Pacientes</p>
 				</div>
-				<div class="icone icone-lateral" id="calendario-icone">
+				<div class="icone icone-lateral" id="Agendamentos-icone">
 					<i class="far fa-calendar-alt"></i>
 					<p>Agendamentos</p>
 				</div>
-				<div class="icone icone-lateral" id="financas-icone">
+				<div class="icone icone-lateral" id="Finanças-icone">
 					<i class="fas fa-dollar-sign"></i>
 					<p>Finanças</p>
 				</div>
-				<div class="icone icone-lateral" id="estoque-icone">
+				<div class="icone icone-lateral" id="Estoque-icone">
 					<i class="fas fa-cubes"></i>
 					<p>Estoque</p>
 				</div>	
-				<div class="icone icone-lateral" id="config-icone">
+				<div class="icone icone-lateral" id="Configurações-icone">
 					<i class="fas fa-cog"></i>
 					<p>Configurações</p>
 				</div>
@@ -77,15 +77,14 @@
 			</div>
 
 			<div class="col1">
-				<div class="tela" id="paciente"><?php require_once 'pacientes.php'; ?> </div>
-				<div class="tela" id="financas">teste2</div>
-				<div class="tela" id="estoque">teste3</div>
-				<div class="tela" id="config">teste4</div>
-				<div class="tela" id="calendario">
+				<div class="tela" id="Pacientes"><?php require_once 'pacientes.php'; ?></div>
+				<div class="tela" id="Finanças">teste2</div>
+				<div class="tela" id="Estoque">teste3</div>
+				<div class="tela" id="Configurações">teste4</div>
+				<div class="tela" id="Agendamentos">
 					<?php require_once 'calendario.php'; ?>
 				</div>
 			</div>
-
 			<div class="col2">
 				
 			</div>
