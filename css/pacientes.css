@@ -215,6 +215,7 @@ button{
     margin-left: -109px;
     padding: 20px 10px;
     color: #fff;
+    animation: swap .7s;
 }
 .aviso-input h3{
 	font-size: 12px;

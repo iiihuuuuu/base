@@ -67,7 +67,7 @@
 					<img src="imagens/login/logo_branca.png">
 				</div>
 
-				<div class="nome-pagina filhos-menu">Agendamentos</div>
+				<div id="titulo-pagina" class="nome-pagina filhos-menu">Pacientes</div>
 
 				<div class="login filhos-menu">
 					<i class="fas fa-user"></i>
