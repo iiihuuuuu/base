@@ -2987,7 +2987,7 @@ function calendarJs( id, options, startDateTime ) {
             if ( input.type === "date" ) {
                 result = new Date( input.value );
                 // Add a day
-				result.setDate(result.getDate() + 1)
+				// result.setDate(result.getDate() + 1)
             } else {
     
                 var match = input.value.match( /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/ );

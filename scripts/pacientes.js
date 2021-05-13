@@ -1,32 +1,35 @@
 $(document).ready(() => {
 
-	// Validação campos vazios
+	// Validação campo nome
 
-	// $("#valida_nome").css("display", "none");
-	//     $('.campo_vazio').on("change keyup paste", function(){
-	// 		var nome = $('.campo_vazio').val().split('');
-	// 		for (var a = 0; a < nome.length; a++){
-	// 			if (nome.length < 3){
-	// 				$("#valida_nome").prop('checked', true);
-	// 				$("#aviso-nome").text("Por favor, digite um nome válido.");
-	// 				$("#aviso-nome").css("color", "#ff0000");
-	// 				break;
-	// 			}
-	// 			else{
-	// 				$("#aviso-nome").text("");
-	// 				$("#valida_nome").prop('checked', false);
-	// 			}
-	// 		}
-	// 		if(nome.length > 0){
-	// 			$(this).css("background-color", "transparent");
-	// 		}
-	//     })
+	$("#valida_nome").css("display", "none");
+	    $('.campo_vazio').on("change keyup paste", function(){
+			var nome = $('.campo_vazio').val().split('');
+			for (var a = 0; a < nome.length; a++){
+				if (nome.length < 3){
+					$("#valida_nome").prop('checked', true);
+					$("#aviso-nome").text("Por favor, digite um nome válido.");
+					$("#aviso-nome").css("color", "#ff0000");
+					break;
+				}
+				else{
+					$("#aviso-nome").text("");
+					$("#valida_nome").prop('checked', false);
+				}
+			}
+			if(nome.length > 0){
+				$(this).css("background-color", "transparent");
+			}
+	    })
+
+	// Remove os avisos ao digitar
 
 	$("input").on("keyup change", function(){
 		$("#aviso").remove();
 	});
 
 	$("#enviar").click(function(){
+		$("#aviso").remove();
 		var inputs = document.getElementsByClassName("validar");
 		var div_pai = $(".inputs-aviso");
 		var len = inputs.length;
@@ -40,7 +43,7 @@ $(document).ready(() => {
 			    return false;
 			    break;
 		    }
-		    //Caso nao possui campos vazios    #Vinicius
+		    //Caso nao possuir campos vazios  #Vinicius
 		}
 		if(valid){
 			let formP = $('#formP').serializeArray();

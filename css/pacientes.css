@@ -1,5 +1,4 @@
 /* TABS */
-
 .containerPaciente{
 	height: 100%;
 	padding: 10px 0px;
@@ -215,6 +214,8 @@ button{
     margin-left: -109px;
     padding: 20px 10px;
     color: #fff;
+    transition: all 1s;
+    animation: swap .7s;
 }
 .aviso-input h3{
 	font-size: 12px;
