@@ -46,11 +46,11 @@ $(document).ready(() => {
 		    //Caso nao possuir campos vazios  #Vinicius
 		}
 		if(valid){
-			let formP = $('#formP').serializeArray();
+			let p = $('#formP').serializeArray();
 			$.ajax({
-				url: 'app/controllers/paciente-controller.php?key=paciente',
+				url: 'app/controllers/paciente.php',
 				method: "POST",
-				data: {formP:formP},
+				data: {p:p},
 				dataType: 'text',
 				async: true,
 				beforeSend: function(xhr){
@@ -63,8 +63,8 @@ $(document).ready(() => {
 					});
 				},
 				success: function(result, status, xhr){
-					console.log(result, status, xhr)
-					if(status === "success" && xhr.status === 200){
+					console.log(result);
+					if(result === "OK" && status === "success" && xhr.status === 200){
 						setTimeout(()=>{
 							Swal.fire({
 								title: "Paciente Cadastrado!",
@@ -74,14 +74,13 @@ $(document).ready(() => {
 								allowOutsideClick: false
 							}).then((res)=>{
 								if(res.isConfirmed == true){
-									$('#reset').click();
-									console.log(result);
+									//$('#reset').click();
 								}
 							});
 						}, 2000);
 					}else{
 						Swal.fire({
-							title: "Erro ao cadastrar o paciente",
+							title: "Algo deu errado!",
 							text: "Tente novamente ou comunique o setor de SUPORTE!",
 							icon: "error",
 							showConfirmButton: true,

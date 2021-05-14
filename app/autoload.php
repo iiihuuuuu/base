@@ -1,7 +1,7 @@
 <?php 
 	spl_autoload_register(function($classe){
 
-		$diretorios = ['controllers', 'model'];
+		$diretorios = ['model'];
 
 		foreach ($diretorios as $dir):
 			$arquivo = (__DIR__.DIRECTORY_SEPARATOR.$dir.DIRECTORY_SEPARATOR.$classe.'.class.php');
