@@ -2,19 +2,19 @@ $(document).ready(() => {
 
 	// Validação campo nome
 
-	$("#valida_nome").css("display", "none");
+	$(".valida_nome").css("display", "none");
 	    $('.campo_vazio').on("change keyup paste", function(){
 			var nome = $('.campo_vazio').val().split('');
 			for (var a = 0; a < nome.length; a++){
 				if (nome.length < 3){
-					$("#valida_nome").prop('checked', true);
+					$(".valida_nome").prop('checked', true);
 					$("#aviso-nome").text("Por favor, digite um nome válido.");
 					$("#aviso-nome").css("color", "#ff0000");
 					break;
 				}
 				else{
 					$("#aviso-nome").text("");
-					$("#valida_nome").prop('checked', false);
+					$(".valida_nome").prop('checked', false);
 				}
 			}
 			if(nome.length > 0){
@@ -28,10 +28,17 @@ $(document).ready(() => {
 		$("#aviso").remove();
 	});
 
-	$("#enviar").click(function(){
+	$(".enviar").click(function(){
 		$("#aviso").remove();
-		var inputs = document.getElementsByClassName("validar");
-		var div_pai = $(".inputs-aviso");
+		if($("#checkAtiva1").is(":checked")){
+			var inputs = $(".form1 .validar");
+			var div_pai = $(".form1 .inputs-aviso");
+		}
+		else if($("#checkAtiva2").is(":checked")){
+			var inputs = $(".form2 .validar");
+			var div_pai = $(".form2 .inputs-aviso");
+		}
+		
 		var len = inputs.length;
 		var valid = true;
 		for(var i = 0; i < len; i++){
@@ -46,7 +53,7 @@ $(document).ready(() => {
 		    //Caso nao possuir campos vazios  #Vinicius
 		}
 		if(valid){
-			let p = $('#formP').serializeArray();
+			let p = $('.formPaciente').serializeArray();
 			$.ajax({
 				url: 'app/controllers/paciente.php',
 				method: "POST",
@@ -111,7 +118,7 @@ $(document).ready(() => {
 		let tel = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,4})(\d{0,4})/);
 		e.target.value = !tel[2] ? tel[1] : '(' + tel[1] + ') ' + tel[2] + (tel[3] ? '-' + tel[3] : '');
 	});
-	$('#celular').on('input', function(e){
+	$('.celular').on('input', function(e){
 		let cel = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
 		e.target.value = !cel[2] ? cel[1] : '(' + cel[1] + ') ' + cel[2] + (cel[3] ? '-' + cel[3] : ''); 
 	});

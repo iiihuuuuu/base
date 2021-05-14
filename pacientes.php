@@ -17,8 +17,10 @@
       <li class="tab"><label for="checkAtiva3">Consultar Paciente</label></li>
     </ul>
 
+      <!-- Cadastrar Paciente -->
+
       <div class="conteudo-paciente">
-        <form class="formPaciente" id="formP">
+        <form class="formPaciente form1" id="formP">
 
           <div class="titulo">
             <h1>Cadastrar</h1>
@@ -36,7 +38,7 @@
                 </div>  
 
                 <div class="inputs inputs-aviso">
-                <input type="checkbox" name="" id="valida_nome">  
+                <input type="checkbox" name="" class="valida_nome">  
                   <input type="text" name="nomePaciente" id="nomePaciente" class="valida-texto validar campo_vazio" maxlength="150" placeholder=" ">
                   <p id="aviso-nome"></p>
                   <label for="nomePaciente">Nome</label> 
@@ -81,12 +83,10 @@
                   <div class="inputs inputs-aviso">  
                      <input type="text" name="bairro" id="bairro" class="valida-texto validar" placeholder=" ">
                      <label for="bairro">Bairro</label>
-
                   </div>
 
                   <div class="inputs inputs-aviso">
-   
-                      <input type="text" name="celular" id="celular" class="valida-numero validar" placeholder=" "> 
+                      <input type="text" name="celular" id="celular" class="valida-numero validar celular" placeholder=" "> 
                       <label for="celuar">Celular</label>
                   </div>  
 
@@ -105,14 +105,111 @@
             </div>    
                 
               <div class="botao"> 
-                <button type="button" id="enviar" name="cadastrarPaciente">Cadastrar</button>
+                <button type="button" class="enviar" id="enviar" name="cadastrarPaciente">Cadastrar</button>
                 <button type="reset" id="reset" >Limpar</button>
               </div>
 
           </div> 
           
         </form>  
-      </div> 
+      </div>
+
+      <!-- Editar Paciente -->
+
+      <div class="conteudo-paciente">
+        <form class="formPaciente form2" id="formPacienteEditar">
+
+          <div class="titulo">
+            <h1>Editar</h1>
+            <div class="divisor divisor4"></div>
+          </div> 
+          <div class="inputsForm"> 
+
+            <div class="containerInputs">
+
+              <div class="coluna-formulario1">
+
+                <div class="inputs inputs-aviso"> 
+                  <input type="text" name="cpf" id="cpf_editar" class="valida-numero validar" minlength="11" maxlength="15" placeholder=" ">
+                  <label for="cpf">CPF</label>
+                </div>  
+
+                <div class="inputs inputs-aviso">
+                <input type="checkbox" name="" class="valida_nome">  
+                  <input type="text" name="nomePaciente" id="nomePaciente_editar" class="valida-texto validar campo_vazio" maxlength="150" placeholder=" ">
+                  <p id="aviso-nome"></p>
+                  <label for="nomePaciente">Nome</label> 
+                </div>
+
+                <div class="inputs">  
+                  <select name="sexo" id="sexo_editar">
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                  </select>
+                  <label for="sexo">Sexo</label>
+                </div>
+
+                <div class="inputs inputs-aviso">  
+                   <input type="date" class="nasc validar" name="dtNascimento" id="dtNascimento_editar" placeholder=" ">
+                   <label for="idade">Data de Nascimento</label> 
+                </div>
+
+                 <div class="inputs">
+                   <input type="text" class="pacienteConvenio valida-texto" name="pacienteConvenio" id="pacienteConvenio_editar" placeholder=" ">
+                   <label for="pacienteConvenio">Convênio</label> 
+                </div>  
+
+                <div class="inputs">  
+                   <input type="text" class="nCarteirinha valida-numero" name="nCarteirinha" id="nCarteirinha_editar" placeholder=" ">
+                   <label for="nCarteirinha">Carteirinha</label> 
+                </div>
+
+              </div>
+              <div class="coluna-formulario2">  
+
+                 <div class="inputs inputs-aviso">  
+                      <input type="text" name="cep" id="cep_editar" class="valida-numero validar" maxlength="9" placeholder=" ">
+                      <label for="cep">Cep</label>
+                  </div>    
+
+                  <div class="inputs inputs-aviso">  
+                      <input type="text" name="endereco" id="endereco_editar" class="valida-texto validar" placeholder=" ">
+                      <label for="endereco">Endereço</label>
+                  </div>
+
+                  <div class="inputs inputs-aviso">  
+                     <input type="text" name="bairro" id="bairro_editar" class="valida-texto validar" placeholder=" ">
+                     <label for="bairro">Bairro</label>
+                  </div>
+
+                  <div class="inputs inputs-aviso">
+                      <input type="text" name="celular" id="celular_editar" class="valida-numero validar celular" placeholder=" "> 
+                      <label for="celuar">Celular</label>
+                  </div>  
+
+                  <div class="inputs inputs-aviso">  
+                    <input type="text" name="telefone" id="telefone_editar" class="valida-numero validar telefone" placeholder=" ">
+                    <label for="telefone">Telefone</label>
+                  </div>
+                    
+                  <div class="inputs inputs-aviso">  
+                    <input type="text" name="telefoneRecado" id="telefoneRecado_editar" class="valida-numero validar telefone" placeholder=" ">
+                     <label for="telefoneRecado">Telefone / Celular Recado</label>
+                  </div>
+
+                </div>   
+
+            </div>    
+                
+              <div class="botao"> 
+                <button type="button" class="enviar" id="enviar_editar" name="cadastrarPaciente">Cadastrar</button>
+                <button type="reset" id="reset_editar" >Limpar</button>
+              </div>
+
+          </div> 
+          
+        </form>  
+      </div>  
 
   </div>         
 </div>
