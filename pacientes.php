@@ -1,7 +1,11 @@
 <?php require_once 'app/autoload.php';
 // $d = new database();
 // $d->insert(array("id_tb_unidades", "dh_ultimo_lancamento", "dh_penultimo_lancamento"), array(44, "554", "lffiçs"));
+<<<<<<< HEAD
 
+=======
+// require_once 'rotas.php';
+>>>>>>> 104c0eed0e25bef517522b639606575e3d11365a
 ?>
 
 <div class="containerPaciente"> 
