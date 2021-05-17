@@ -1,10 +1,10 @@
 {
-	"name": "luvin-ti",
+	"name": "luvinti-09",
 	"description": "Tecnologia",
 	"minimum-stability": "stable",
 	"license": "MIT",
 	"authors": [{
-		"name": "Lucas, Tiago e Vinicius",
+		"name": "Lucas -Tiago - Vinicius",
 		"email": "luvinti.tech@gmail.com",
 		"role": "Developer"
 	}],
@@ -15,5 +15,8 @@
 		"psr-4": {
 			"App\\": "app/"
 		}
+	},
+	"require": {
+		"slim/slim": "3.*"
 	}
 }
