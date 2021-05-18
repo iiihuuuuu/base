@@ -8,24 +8,26 @@
   <div class="tabs"> 
 
     <input type="radio" class="checkAtiva" id="checkAtiva1" name="checkAtiva" checked>
-    <input type="radio" class="checkAtiva" id="checkAtiva2" name="checkAtiva">
-    <input type="radio" class="checkAtiva" id="checkAtiva3" name="checkAtiva">
 
     <ul class="listaTabs">
-      <li class="tab"><label for="checkAtiva1">Cadastrar Paciente</label></li>
-      <li class="tab"><label for="checkAtiva2">Editar Paciente</label></li>
-      <li class="tab"><label for="checkAtiva3">Consultar Paciente</label></li>
+      <li class="tab"><label for="checkAtiva1">Controle de Pacientes</label></li>
     </ul>
 
-      <!-- Cadastrar Paciente -->
-
       <div class="conteudo-paciente">
+        <div class="container-explicacao">
+          <div class="explicacao">
+            <label for="ativa-info"><i class="far fa-question-circle"></i></label>
+            <input type="checkbox" name="" id="ativa-info">
+            <div class="info"><p>
+                Nesta tela você pode:<br/>
+              - Cadastrar um novo paciente;<br/>
+              - Consultar um paciente;<br/>
+              - Editar um paciente.</p>
+            </div>
+          </div>  
+        </div>
         <form class="formPaciente form1" id="formP">
 
-          <div class="titulo">
-            <h1>Cadastrar</h1>
-            <div class="divisor divisor4"></div>
-          </div> 
           <div class="inputsForm"> 
 
             <div class="containerInputs">
@@ -104,9 +106,11 @@
 
             </div>    
                 
-              <div class="botao"> 
-                <button type="button" class="enviar" id="enviar" name="cadastrarPaciente">Cadastrar</button>
-                <button type="reset" id="reset" >Limpar</button>
+              <div class="container-botoes">
+                <div class="botoes"> 
+                  <button type="button" class="enviar" id="enviar" name="cadastrarPaciente">Enviar</button>
+                  <button type="reset" id="reset" >Limpar</button>
+                </div>  
               </div>
 
           </div> 

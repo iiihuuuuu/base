@@ -40,20 +40,22 @@
 .conteudo-paciente{
 	display: none;
 	flex: 1;
-	justify-content: center;
 	height: 90%;
 }
 .tabs [type="radio"]:nth-of-type(1):checked ~ .listaTabs .tab:nth-of-type(1),
 .tabs [type="radio"]:nth-of-type(2):checked ~ .listaTabs .tab:nth-of-type(2),
 .tabs [type="radio"]:nth-of-type(3):checked ~ .listaTabs .tab:nth-of-type(3),
 .tabs [type="radio"]:nth-of-type(4):checked ~ .listaTabs .tab:nth-of-type(4){
-	background-color: #333333; 
+	background-color: #338eb2; 
 }
 .tabs [type="radio"]:nth-of-type(1):checked ~ .conteudo-paciente:nth-of-type(1),
 .tabs [type="radio"]:nth-of-type(2):checked ~ .conteudo-paciente:nth-of-type(2),
 .tabs [type="radio"]:nth-of-type(3):checked ~ .conteudo-paciente:nth-of-type(3),
 .tabs [type="radio"]:nth-of-type(4):checked ~ .conteudo-paciente:nth-of-type(4) {
 	display: flex;
+	flex-flow: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* --------------- */
@@ -95,11 +97,17 @@ select{
   	background-size: 2rem 2rem;
   	width: 100%;
 }
-.botao{
+.container-botoes{
+	display: flex;
+    justify-content: center;
+}
+.botoes{
 	display: flex;
 	justify-content: center;
+	flex-basis: 50%;
+    justify-content: space-around;
 }
-.botao button{
+.botoes button{
 	background-color: #333;
     border: 1px solid #fff;
     border-radius: 50px;
@@ -111,7 +119,7 @@ select{
     transition: .5s;
     font-weight: bold;
 }
-.botao button:hover{
+.botoes button:hover{
 	background-color: #338eb2;
 	border: 1px solid #fff;
 	color: #fff;
@@ -136,6 +144,7 @@ button{
 	justify-content: center;
 	padding: 0px;
 	flex-flow: column;
+	flex-grow: 2;
 }
 .formPaciente .titulo{	
 	flex-grow: 1;
@@ -160,15 +169,9 @@ button{
 }
 .formPaciente .inputsForm .containerInputs{
 	display: flex;
-	justify-content: justify;
 }	
 .formPaciente .icones{
 	margin: 0px 0px 25px 0px;
-}
-.botoes{
-	display: flex;
-	justify-content: center;
-	padding: 0px 25px;
 }
 .formPaciente h1{
 	color: #333;
@@ -234,3 +237,84 @@ button{
   left: 50%;
   transform: translateX(0%) translateY(520%);
 }
+
+/* BOTÃO INFOS */
+
+#ativa-info{
+	display: none;
+}
+#ativa-info:checked ~ .info{
+	opacity: 1;
+	transition: 1s;
+}
+#ativa-info:checked ~ .info:before{
+	opacity: 1;
+	transition: 1s;
+}
+.info{
+	position: absolute;
+	display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+   	top: 190px;
+   	right: 20px;
+    width: 200px;
+    height: 72px;
+    background: #ffeb3b78;
+    font-size: 13px;
+    padding: 13px;
+    opacity: 0;
+    line-height: 1.3rem;
+    transition: 1s;
+}
+.info::before{
+  content: '';
+  position: relative;
+  top: -20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 21px 21px 21px;
+  border-color: transparent transparent #ffeb3b78 transparent;
+  left: 20px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 1s;
+}
+.container-explicacao{
+	display: flex;
+	width: 100%;
+	flex-flow: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 10px;
+}
+.explicacao{
+	margin-right: 43px;
+}
+.explicacao label{
+	cursor: pointer;
+}
+.explicacao label i{
+	color: #338eb2;
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+
+/* RESPONSIVIDADE */ 
+
+@media only screen and (max-width: 1280px){
+	.formPaciente{
+		width: 100%;
+		align-items: center;
+	}
+	.inputsForm{
+		width: 90%;	
+	}
+}
+@media only screen and (max-width: 800px){
+	.formPaciente .inputsForm .containerInputs{
+		flex-flow: column;
+	}
+}	
