@@ -1,5 +1,5 @@
 {
-	"name": "luvinti-09",
+	"name": "luvinti/09",
 	"description": "Tecnologia",
 	"minimum-stability": "stable",
 	"license": "MIT",
@@ -17,6 +17,7 @@
 		}
 	},
 	"require": {
-		"slim/slim": "^3.0"
+		"slim/slim": "^3.0",
+		"tuupola/slim-basic-auth": "^3.3"
 	}
 }

@@ -16,20 +16,31 @@ class DadosPaciente{
 
 	public function inserirDados(Request $request, Response $response, array $args): Response {
 
-		$this->p->nome = 1;
-		$this->p->telefone = "2021/01/05";
-		$this->p->numero = "2021/05/18";
-		$response = $this->p->create();
-
-		return $response;
+		$res = $this->p->insert('vw_ultimas_datas', 
+			[
+				'id_tb_unidades' => 5,
+				'dh_ultimo_lancamento' => '2021/04/04',
+				'dh_penultimo_lancamento' => '2021/05/20'
+			]
+		);
+		return $response->withJson($res);
 	}
 
 	public function buscarDados(Request $request, Response $response, array $args): Response {
 		
-		$res = $this->p->select();
-		$response = $response->withJson($res);
+		$res = $this->p->select('vw_ultimas_datas');
+		return $response->withJson($res);
+	}
 
-		return $response;
+	public function atualizarDados(Request $resquest, Response $response, array $args): Response {
+
+		$res = $this->p->atualizarDados('vw_ultimas_datas', 
+			[
+				'id_tb_unidades' => 4,
+			],
+			'id_tb_unidades = '. 1
+		);
+		return $response->withJson($res);
 	}
 }
 
