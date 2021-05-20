@@ -3,6 +3,8 @@
 namespace App\Controllers; 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Slim\Views\PhpRenderer as PhpRenderer;
+
 use App\Model\Paciente;
 use League\PLates\Engine;
 
@@ -10,9 +12,17 @@ use League\PLates\Engine;
 class DadosPaciente{
 
 	private $p;
+	private $renderer;
 
-	public function __construct($app){
+	public function __construct(){
 		$this->p = new Paciente();
+	}
+
+	public function home(PhpRenderer $renderer, Request $request, Response $response): Response{
+		$this->renderer = $renderer;
+		$this->renderer->setLayout('../../views/layout.php');
+		return $this->renderer->render($response, '../../dashboard.php', ['name'=> "World"]);
+
 	}
 
 	public function inserirDados(Request $request, Response $response, array $args): Response {
@@ -29,7 +39,7 @@ class DadosPaciente{
 
 	public function buscarDados(Request $request, Response $response, array $args): Response {
 		
-		$res = $this->p->select('vw_ultimas_datas');
+		$res = $this->p->select('tb_lancamentos');
 		return $response->withJson($res);
 	}
 
