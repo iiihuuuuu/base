@@ -18,6 +18,7 @@ class ComposerStaticInitaf49187dffbc69bfba12f5dfd4a3d476
         ),
         'S' => 
         array (
+            'Slim\\Views\\' => 11,
             'Slim\\' => 5,
         ),
         'P' => 
@@ -49,6 +50,10 @@ class ComposerStaticInitaf49187dffbc69bfba12f5dfd4a3d476
         'Tuupola\\Http\\Factory\\' => 
         array (
             0 => __DIR__ . '/..' . '/tuupola/http-factory/src',
+        ),
+        'Slim\\Views\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/php-view/src',
         ),
         'Slim\\' => 
         array (

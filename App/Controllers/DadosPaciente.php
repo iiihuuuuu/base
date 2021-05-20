@@ -4,13 +4,14 @@ namespace App\Controllers;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use App\Model\Paciente;
+use League\PLates\Engine;
 
 
 class DadosPaciente{
 
 	private $p;
 
-	public function __construct(){
+	public function __construct($app){
 		$this->p = new Paciente();
 	}
 
