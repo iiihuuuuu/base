@@ -1,5 +1,5 @@
 {
-	"name": "luvinti-09",
+	"name": "luvinti/09",
 	"description": "Tecnologia",
 	"minimum-stability": "stable",
 	"license": "MIT",
@@ -15,8 +15,5 @@
 		"psr-4": {
 			"App\\": "app/"
 		}
-	},
-	"require": {
-		"slim/slim": "3.*"
 	}
 }
