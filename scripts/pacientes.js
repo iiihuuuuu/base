@@ -30,15 +30,8 @@ $(document).ready(() => {
 
 	$(".enviar").click(function(){
 		$("#aviso").remove();
-		if($("#checkAtiva1").is(":checked")){
-			var inputs = $(".form1 .validar");
-			var div_pai = $(".form1 .inputs-aviso");
-		}
-		else if($("#checkAtiva2").is(":checked")){
-			var inputs = $(".form2 .validar");
-			var div_pai = $(".form2 .inputs-aviso");
-		}
-		
+		var inputs = $(".validar");
+		var div_pai = $(".inputs-aviso");
 		var len = inputs.length;
 		var valid = true;
 		for(var i = 0; i < len; i++){

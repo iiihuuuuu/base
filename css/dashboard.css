@@ -92,8 +92,9 @@ body, html{
 	justify-content: space-around;
 }
 .col1{
-
-	flex-grow: 2;
+	display: flex;
+    justify-content: flex-end;
+    flex-grow: 2;
 }
 .col2{
 	width: 800px;
@@ -104,6 +105,8 @@ body, html{
 
 /* menu-lateral */
 .menu-lateral{
+	position: fixed;
+	height: 95%;
 	background-color: #fff;
 	display: flex;
     flex-flow: column;
@@ -187,4 +190,5 @@ body, html{
 
 .tela{
 	display: none;
+	width: calc(100% - 75px);
 }
