@@ -14,14 +14,11 @@
 	"autoload": {
 		"psr-4": {
 			"App\\": "App"
-		},
-	    "files": [
-	        "App/support.php"
-	    ]
+		}
 	},
 	"require": {
 		"slim/slim": "^3.0",
 		"tuupola/slim-basic-auth": "^3.3",
-		"slim/php-view": "^3.1"
+		"slim/psr7": "^1.4"
 	}
 }

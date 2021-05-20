@@ -5,15 +5,15 @@ use function slim\{slimConfiguration, basicAuth};
 
 //Classes
 use App\Controllers\DadosPaciente;
-use App\Controllers\Views;
+use Slim\Views\PhpRenderer;
+
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
 
 //Atribui a função chamada, na qual possui o container
-$app = new \Slim\App();
+$app = new \Slim\App(slimConfiguration());
 
 $app->group('', function() use ($app) {
-	
-	//View
-	$app->get('/home', Home::class);
 
 	$app->get('/buscarDados', DadosPaciente::class . ':buscarDados');
 	$app->map(['get', 'post'], '/inserirDados', DadosPaciente::class . ':inserirDados');

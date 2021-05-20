@@ -7,5 +7,4 @@ require_once 'slim/basicAuth.php';
 require_once 'routes/index.php';
 
 
-
 ?>
