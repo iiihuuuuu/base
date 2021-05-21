@@ -3,21 +3,33 @@
 namespace App\Controllers; 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+
 use App\Model\Paciente;
-use League\PLates\Engine;
+use League\Plates\Engine;
 
 
 class DadosPaciente{
 
+	/** @var Engine */
 	private $p;
+	private $view;
 
-	public function __construct($app){
+	public function __construct($router){
 		$this->p = new Paciente();
+		$this->view = Engine::create(dirname(__DIR__, 2). "/theme", "php");
+		$this->view->addData(["router" => $router]);
 	}
 
-	public function inserirDados(Request $request, Response $response, array $args): Response {
+	public function home(): void{
+		//echo $this->view->loadExtension(new League\Plates\Extension\Asset)
+		echo $this->view->render("login", []);
 
-		$res = $this->p->insert('vw_ultimas_datas', 
+		//var_dump($aa);
+	}
+
+	public function inserirDados(Request $request, Response $response): Response{
+
+		$this->p->insert('vw_ultimas_datas', 
 			[
 				'id_tb_unidades' => 5,
 				'dh_ultimo_lancamento' => '2021/04/04',
@@ -27,21 +39,21 @@ class DadosPaciente{
 		return $response->withJson($res);
 	}
 
-	public function buscarDados(Request $request, Response $response, array $args): Response {
+	public function buscarDados(): array{
 		
-		$res = $this->p->select('vw_ultimas_datas');
-		return $response->withJson($res);
+		$this->p->select('vw_ultimas_datas');
+		//return $response->withJson($res);
 	}
 
-	public function atualizarDados(Request $resquest, Response $response, array $args): Response {
+	public function atualizarDados(): void {
 
-		$res = $this->p->atualizarDados('vw_ultimas_datas', 
+		$this->p->atualizarDados('vw_ultimas_datas', 
 			[
 				'id_tb_unidades' => 4,
 			],
 			'id_tb_unidades = '. 1
 		);
-		return $response->withJson($res);
+		//return $response->withJson($res);
 	}
 }
 

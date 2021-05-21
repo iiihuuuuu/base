@@ -2,9 +2,11 @@
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link rel="stylesheet" type="text/css" href="css/resets.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	
 </head>
 <body class="body-login">	
 
@@ -57,6 +59,7 @@
 		</div>
 				
 	</div>
+
 <script src="scripts/lib/jquery-3.3.1.js"></script>		
 <script src="scripts/login.js"></script>
 </body>
