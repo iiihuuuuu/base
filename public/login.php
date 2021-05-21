@@ -29,7 +29,7 @@
 			<div class="formulario">
 
 				<div class="logo">
-					<img src="../imagens/login/logo_branca.png">
+					<img src="imagens/login/logo_branca.png">
 				</div>
 
 				<form class="formLogin" id="form">
