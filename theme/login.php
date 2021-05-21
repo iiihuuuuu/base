@@ -5,8 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link rel="stylesheet" type="text/css" href="css/resets.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-	
 </head>
 <body class="body-login">	
 
@@ -31,24 +29,24 @@
 			<div class="formulario">
 
 				<div class="logo">
-					<img src="imagens/login/logo_branca.png">
+					<img src="../imagens/login/logo_branca.png">
 				</div>
 
-				<form class="formLogin" method="post">
+				<form class="formLogin" id="form">
 
 					<div class="input inputs-aviso">
-						<input type="text" name="login" class="validar" placeholder=" ">	
+						<input type="text" id="login" name="login" class="validar" placeholder=" ">	
 						<label>Login:</label>
 					</div>	
 
 					<div class="input inputs-aviso">
-						<input type="password" name="login" class="validar" placeholder=" ">	
+						<input type="password" id="senha" name="senha" class="validar" placeholder=" ">	
 						<label>Senha:</label>
 					</div>	
 
 					<div class="botao">
 
-					<button type="submit" id="enviar" class="login" value="Entrar">Entrar</button>	
+					<button type="button" id="enviar" name="enviar" class="login">Entrar</button>	
 
 					</div>	
 

@@ -3,28 +3,18 @@
 namespace App\Controllers; 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-
 use App\Model\Paciente;
-use League\Plates\Engine;
-
 
 class DadosPaciente{
 
-	/** @var Engine */
 	private $p;
-	private $view;
 
-	public function __construct($router){
+	public function __construct(){
 		$this->p = new Paciente();
-		$this->view = Engine::create(dirname(__DIR__, 2). "/theme", "php");
-		$this->view->addData(["router" => $router]);
 	}
 
 	public function home(): void{
-		//echo $this->view->loadExtension(new League\Plates\Extension\Asset)
-		echo $this->view->render("login", []);
 
-		//var_dump($aa);
 	}
 	public function inserirDados(Request $request, Response $response, array $args): Response {
 
@@ -39,16 +29,16 @@ class DadosPaciente{
 		return $response->withJson($res);
 	}
 
-	public function buscarDados(): array{
+	public function buscarDados(Request $request, Response $response, array $args): Response{
 		
-		$this->p->select('vw_ultimas_datas');
-		//return $response->withJson($res);
+		// $this->p->select('vw_ultimas_datas');
+		// return $response->withJson($res);
 
 		$res = $this->p->select('tb_lancamentos');
 		return $response->withJson($res);
 	}
 
-	public function atualizarDados(): void {
+	public function atualizarDados(Request $request, Response $response, array $args): Response{
 
 		$this->p->atualizarDados('vw_ultimas_datas', 
 			[
@@ -56,7 +46,7 @@ class DadosPaciente{
 			],
 			'id_tb_unidades = '. 1
 		);
-		//return $response->withJson($res);
+		return $response->withJson($res);
 	}
 }
 

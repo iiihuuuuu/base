@@ -14,3 +14,10 @@ $("#enviar").click(function(){
 	    }
 	}
 });
+
+$(document).ready(function(){
+	document.getElementById('enviar').addEventListener('click', function(e){
+		var form = $('#form')[0];
+		
+	});
+});
