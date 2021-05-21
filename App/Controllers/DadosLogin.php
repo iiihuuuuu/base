@@ -13,7 +13,7 @@ class DadosLogin {
 	}
 
 	public function login(Request $request, Response $response, array $args): Response {
-		return $response->withRedirect('../base/theme/login.php');
+		return $response->withRedirect('../base/public/login.php');
 	}
 }
 
