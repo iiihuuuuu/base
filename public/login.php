@@ -29,18 +29,18 @@
 			<div class="formulario">
 
 				<div class="logo">
-					<img src="../imagens/login/logo_branca.png">
+					<img src="imagens/login/logo_branca.png">
 				</div>
 
 				<form class="formLogin" id="form">
 
 					<div class="input inputs-aviso">
-						<input type="text" id="login" name="login" class="validar" placeholder=" ">	
+						<input type="text" id="login" name="login" class="validar" placeholder=" " value="master">	
 						<label>Login:</label>
 					</div>	
 
 					<div class="input inputs-aviso">
-						<input type="password" id="senha" name="senha" class="validar" placeholder=" ">	
+						<input type="password" id="senha" name="senha" class="validar" placeholder=" " value="123456">	
 						<label>Senha:</label>
 					</div>	
 
@@ -58,7 +58,8 @@
 				
 	</div>
 
-<script src="scripts/lib/jquery-3.3.1.js"></script>		
+<script src="scripts/lib/jquery-3.3.1.js"></script>	
+<script src="scripts/lib/sweetalert2.min.js"></script>
 <script src="scripts/login.js"></script>
 </body>
 </html>

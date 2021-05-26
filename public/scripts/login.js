@@ -15,9 +15,27 @@ $("#enviar").click(function(){
 	}
 });
 
-$(document).ready(function(){
-	document.getElementById('enviar').addEventListener('click', function(e){
-		var form = $('#form')[0];
-		
+document.getElementById('enviar').addEventListener('click', function(e){
+	const form = $('#form').serializeArray();
+	$.ajax({
+		url: '../dadosLogin',
+		method: "POST",
+		data: {form:form},
+		dataType: 'text',
+		// beforeSend: () => {
+		// 	if($('#login').val() != "" && $('#senha').val() != ""){
+		// 		Swal.fire("aaa", "sdsd", "success");
+		// 		console.log('aaaaa');
+		// 	}else{
+		// 		console.log('aa');
+		// 	}
+		// },
+		success: (data, xhr, status) => {
+			console.log(data, xhr, status)
+			location.href = '../dashboard';
+		},
+		complete: (xhr, status) => {
+
+		}
 	});
 });

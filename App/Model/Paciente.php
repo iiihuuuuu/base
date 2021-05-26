@@ -3,7 +3,7 @@
 namespace App\Model;
 use App\Model\Database;
 
-class Paciente extends Database{
+class Paciente{
 
     private $db;
     private $id;
