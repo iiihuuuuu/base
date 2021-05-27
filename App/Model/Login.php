@@ -13,7 +13,7 @@ class Login {
 	}
 
 	public function authLogin($login, $senha){
-		$res = $this->db->select('profissionais', "login = '$login'", "ativo = 1");
+		$res = $this->db->select('profissionais', "login = '$login'", "senha = '$senha'", "ativo = 1");
 		$auth = count($res) > 0 ? "Authenticated" : "Not Authenticated";
 
 		return $auth;

@@ -19,29 +19,29 @@ use Slim\Views\PhpRenderer;
 //Atribui a função chamada, na qual possui o container
 $app = new \Slim\App(slimConfiguration());
 
-// $container = $app->getContainer();
-// $container['view'] = [
-// 	'pagina' => new \Slim\Views\PhpRenderer('./public'),
-// 	'css' => new \Slim\Views\PhpRenderer('./public/css')
-// ];
+$container = $app->getContainer();
+$container['view'] = [
+	'pagina' => new \Slim\Views\PhpRenderer('./public'),
+	'css' => new \Slim\Views\PhpRenderer('./public/css')
+];
 	
-// $app->get('/', function(Request $request, Response $response) {
-	
-// 	$this->view['css']->render($response, 'login.css');
-// 	$this->view['pagina']->render($response, 'login.php');
-
-// });
+$app->get('/', function(Request $request, Response $response, array $args) {
+	$this->view['pagina']->render($response, 'login.php');
+});
+$app->get('/dashboard', function(Request $request, Response $response) {
+	$this->view['pagina']->render($response, 'dashboard.php');
+});
 
 //$app->group('/', function() use ($app))
 
 
 $app->group('', function() use ($app) {
 	
-	$app->get('/', DadosLogin::class . ':login');
-	$app->get('/dashboard', DadosLogin::class . ':dashboard');
+	//$app->get('/', DadosLogin::class . ':login');
+	// $app->get('/dashboard', DadosLogin::class . ':dashboard');
 
 	$app->post('/dadosLogin', DadosLogin::class . ':dadosLogin');
-	$app->get('/buscarDados', DadosPaciente::class . ':buscarDados');
+	//$app->get('/buscarDados', DadosPaciente::class . ':buscarDados');
 	$app->map(['get', 'post'], '/inserirDados', DadosPaciente::class . ':inserirDados');
 	$app->map(['get', 'post', 'put'], '/atualizarDados', DadosPaciente::class . ':atualizarDados');
 
