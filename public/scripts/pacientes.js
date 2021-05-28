@@ -1,7 +1,8 @@
 $(document).ready(() => {
-
+autoComplete()
+cadastroPaciente()
+	
 	// Validação campo nome
-
 	$(".valida_nome").css("display", "none");
 	    $('.campo_vazio').on("change keyup paste", function(){
 			var nome = $('.campo_vazio').val().split('');
@@ -23,7 +24,6 @@ $(document).ready(() => {
 	    })
 
 	// Remove os avisos ao digitar
-
 	$("input").on("keyup change", function(){
 		$("#aviso").remove();
 	});
@@ -98,7 +98,7 @@ $(document).ready(() => {
 
 	 // Máscara no nome
 	$('.valida-texto').on('input', function(e){
-		e.target.value = e.target.value.replace(/[0-9!@#$%&*()+=]|\-/, '');
+		e.target.value = e.target.value.match(/^[a-zA-Z-' ]*$/, '');
 	});
 
 	// Máscara de telefone
@@ -116,3 +116,40 @@ $(document).ready(() => {
 		e.target.value = !cel[2] ? cel[1] : '(' + cel[1] + ') ' + cel[2] + (cel[3] ? '-' + cel[3] : ''); 
 	});
 });
+
+/**
+	CADASTRO DO PACIENTE
+**/
+function cadastroPaciente(){
+	document.getElementById('enviar').addEventListener('click', () => {
+		let form = $('#formP input').serializeArray();
+		console.log(form);
+	});
+}
+
+
+/**
+	AUTO COMPLETE PACIENTE
+	data = Retorno do banco
+	v    = Retorno do input
+	ul   = Criação do elemento/Mostra os valores do data
+**/
+function autoComplete(){
+	const ul = document.createElement('ul');
+	$('.inputs-aviso #cpf').before(ul)
+	ul.setAttribute('id', 'autoComplete')
+	document.getElementById('cpf').addEventListener('input', (v) =>{
+
+		$.ajax({
+			url: '../base/app/buscarPaciente',
+			method: "POST",
+			data: {form:v.target.value},
+			dataType: 'text',
+			success: function(data){
+				if(v.target.value > 3){
+					ul.innerHTML = data;
+				}
+			}
+		});
+	});
+}

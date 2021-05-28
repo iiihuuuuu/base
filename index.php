@@ -24,26 +24,29 @@ $container['view'] = [
 	'pagina' => new \Slim\Views\PhpRenderer('./public'),
 	'css' => new \Slim\Views\PhpRenderer('./public/css')
 ];
+
+$app->group('/', function() use ($app){
+
+	$app->get('', function(Request $request, Response $response, array $args) {
+		$this->view['pagina']->render($response, 'login.php');
+	});
+
+	$app->get('dashboard', function(Request $request, Response $response) {
+		$this->view['pagina']->render($response, 'dashboard.php');
+	});
+
+})->add(basicAuth());
 	
-$app->get('/', function(Request $request, Response $response, array $args) {
-	$this->view['pagina']->render($response, 'login.php');
-});
-$app->get('/dashboard', function(Request $request, Response $response) {
-	$this->view['pagina']->render($response, 'dashboard.php');
-});
 
 //$app->group('/', function() use ($app))
 
 
-$app->group('', function() use ($app) {
+$app->group('/app', function() use ($app) {
 	
-	//$app->get('/', DadosLogin::class . ':login');
-	// $app->get('/dashboard', DadosLogin::class . ':dashboard');
-
 	$app->post('/dadosLogin', DadosLogin::class . ':dadosLogin');
-	//$app->get('/buscarDados', DadosPaciente::class . ':buscarDados');
-	$app->map(['get', 'post'], '/inserirDados', DadosPaciente::class . ':inserirDados');
-	$app->map(['get', 'post', 'put'], '/atualizarDados', DadosPaciente::class . ':atualizarDados');
+	$app->post('/buscarPaciente', DadosPaciente::class . ':buscarPaciente');
+	// $app->map(['get', 'post'], '/inserirDados', DadosPaciente::class . ':inserirDados');
+	// $app->map(['get', 'post', 'put'], '/atualizarDados', DadosPaciente::class . ':atualizarDados');
 
 })->add(basicAuth());
 $app->run();

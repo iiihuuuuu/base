@@ -3,4 +3,3 @@
 
     </div>    
 </div>       
-<script type="text/javascript" src="scripts/calendario.js"></script>

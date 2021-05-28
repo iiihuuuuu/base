@@ -13,9 +13,6 @@ class DadosPaciente{
 		$this->p = new Paciente();
 	}
 
-	public function home(): void{
-
-	}
 	public function inserirDados(Request $request, Response $response, array $args): Response {
 
 
@@ -29,13 +26,8 @@ class DadosPaciente{
 		return $response->withJson($res);
 	}
 
-	public function buscarDados(Request $request, Response $response, array $args): Response{
-		
-		// $this->p->select('vw_ultimas_datas');
-		// return $response->withJson($res);
-
-		$res = $this->p->select('tb_lancamentos');
-		return $response->withJson($res);
+	public function buscarPaciente(){
+		$this->p->autoComplete('paciente', $_POST['form']);
 	}
 
 	public function atualizarDados(Request $request, Response $response, array $args): Response{

@@ -13,9 +13,9 @@ class DadosLogin {
 		$this->login = new Login();
 	}
 
-	public function login(Request $request, Response $response, array $args): Response {
-		return $response->withRedirect('../base/public/login.php');
-	}
+	// public function login(Request $request, Response $response, array $args): Response {
+	// 	return $response->withRedirect('../base/public/login.php');
+	// }
 
 	public function dashboard(Request $request, Response $response, array $args): Response {
 		return $response->withRedirect('../base/public/dashboard.php');

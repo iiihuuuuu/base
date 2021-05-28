@@ -7,10 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="./public/css/pacientes.css">
 	<link rel="stylesheet" type="text/css" href="./public/css/animacoes.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-	<link rel="stylesheet" href="./public/css/lib/calendarjs.css">
 	
 	<script src="./public/scripts/lib/jquery-3.3.1.js"></script>
-	<script src="./public/scripts/lib/calendarjs.js"></script>
 
 </head>
 <body>
@@ -90,7 +88,7 @@
 		</div>	
 
 	</div>	
-	<script type="text/javascript" src="./public/scripts/geral.js"></script>
+	<script type="text/javascript" src="./public/scripts/dashboard.js"></script>
 	<script type="text/javascript" src="./public/scripts/pacientes.js"></script>
 </body>
 </html>
