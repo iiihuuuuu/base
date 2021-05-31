@@ -35,9 +35,19 @@
               <div class="coluna-formulario1">
 
                 <div class="inputs inputs-aviso"> 
-                  <input type="text" name="cpf" id="cpf" class="valida-numero validar" minlength="11" maxlength="15" placeholder=" ">
+                  <input type="text" name="cpf" id="cpf" class="valida-numero validar" minlength="11" maxlength="11" placeholder=" ">
                   <label for="cpf">CPF</label>
                 </div>  
+
+                <div class="inputs inputs-aviso"> 
+                  <input type="text" name="rg" id="rg" class="valida-numero validar" minlength="9" maxlength="9" placeholder=" ">
+                  <label for="rg">RG</label>
+                </div>
+
+                <div class="inputs inputs-aviso"> 
+                  <input type="text" name="emissorRG" id="emissorRG" class="valida-numero validar" minlength="9" maxlength="9" placeholder=" ">
+                  <label for="emissorRG">EMISSOR RG</label>
+                </div> 
 
                 <div class="inputs inputs-aviso">
                 <input type="checkbox" name="" class="valida_nome">  
@@ -86,6 +96,11 @@
                      <input type="text" name="bairro" id="bairro" class="valida-texto validar" placeholder=" ">
                      <label for="bairro">Bairro</label>
                   </div>
+
+                  <div class="inputs inputs-aviso">
+                      <input type="text" name="email" id="email" class="valida-numero" placeholder=" "> 
+                      <label for="celuar">Email</label>
+                  </div>  
 
                   <div class="inputs inputs-aviso">
                       <input type="text" name="celular" id="celular" class="valida-numero validar celular" placeholder=" "> 

@@ -36,7 +36,7 @@ class Database{
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function atualizarDados($table, $values, $where, $and = null): string{
+    public function atualizar($table, $values, $where, $and = null): string{
         $and    = strlen($and) ? ' AND '.$and : '';
         $fields = array_keys($values);    
         
@@ -44,7 +44,7 @@ class Database{
         
     }
 
-    public function insert($table, $values): string{
+    public function insert($table, $values){
         $fields = array_keys($values);
         $binds  = array_pad([], count($fields), '?');    
         
@@ -54,9 +54,24 @@ class Database{
             $stm = $this->connection->prepare($query);
             $stm->execute(array_values($values));
             return 'Inserido com Sucesso!';
-        } catch(PDOException $e){
-            die('ERROR: '.$e->getMessage());
-            return 'Erro ao tentar inserir os dados';
+        
+        }catch(PDOException $e){
+            die("ERRO: ".$e->getMessage());
+        }
+    }
+
+    public function delete($table, $values){
+        $fields = array_keys($values);
+        echo "DELETE FROM $table WHERE ".implode(" = ? AND ", $fields)." = ?";
+
+        try {
+            $stm = $this->connection->prepare($query);
+            $stm->execute(array_values($values));
+            return "Deletado com sucesso";
+        
+        }catch(PDOException $e){
+            die('Error: '. $e->getMessage());
+            return 'Erro ao tentar deletar os dados';
         }
     }
 }

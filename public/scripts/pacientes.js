@@ -54,39 +54,39 @@ cadastroPaciente()
 				dataType: 'text',
 				async: true,
 				beforeSend: function(xhr){
-					Swal.fire({
-						title: "Aguarde!",
-						text: "Enviado dados...",
-						showConfirmButton: false,
-						allowEscapeKey: false,
-						allowOutsideClick: false		
-					});
+					// Swal.fire({
+					// 	title: "Aguarde!",
+					// 	text: "Enviado dados...",
+					// 	showConfirmButton: false,
+					// 	allowEscapeKey: false,
+					// 	allowOutsideClick: false		
+					// });
 				},
 				success: function(result, status, xhr){
 					console.log(result);
 					if(result === "OK" && status === "success" && xhr.status === 200){
-						setTimeout(()=>{
-							Swal.fire({
-								title: "Paciente Cadastrado!",
-								text: "Clique em OK para sair.",
-								icon: "success",
-								allowEscapeKey: false,
-								allowOutsideClick: false
-							}).then((res)=>{
-								if(res.isConfirmed == true){
-									//$('#reset').click();
-								}
-							});
-						}, 2000);
+						// setTimeout(()=>{
+						// 	Swal.fire({
+						// 		title: "Paciente Cadastrado!",
+						// 		text: "Clique em OK para sair.",
+						// 		icon: "success",
+						// 		allowEscapeKey: false,
+						// 		allowOutsideClick: false
+						// 	}).then((res)=>{
+						// 		if(res.isConfirmed == true){
+						// 			//$('#reset').click();
+						// 		}
+						// 	});
+						// }, 2000);
 					}else{
-						Swal.fire({
-							title: "Algo deu errado!",
-							text: "Tente novamente ou comunique o setor de SUPORTE!",
-							icon: "error",
-							showConfirmButton: true,
-							allowOutsideClick: false,
-							allowEscapeKey: false
-						});
+						// Swal.fire({
+						// 	title: "Algo deu errado!",
+						// 	text: "Tente novamente ou comunique o setor de SUPORTE!",
+						// 	icon: "error",
+						// 	showConfirmButton: true,
+						// 	allowOutsideClick: false,
+						// 	allowEscapeKey: false
+						// });
 					}
 				},
 				error: function(xhr, status, error){
@@ -119,35 +119,60 @@ cadastroPaciente()
 
 /**
 	CADASTRO DO PACIENTE
+	@string array* form = Valores do formulario
 **/
 function cadastroPaciente(){
 	document.getElementById('enviar').addEventListener('click', () => {
-		let form = $('#formP input').serializeArray();
-		console.log(form);
+		let form = $('#formP').serializeArray();
+		$.ajax({
+			url: '../base/app/dadosPaciente',
+			method: "POST",
+			data: {form:form},
+			dataType: 'text',
+			success: function(data){
+				console.log(data);
+			}
+		});
 	});
 }
 
-
 /**
 	AUTO COMPLETE PACIENTE
-	data = Retorno do banco
-	v    = Retorno do input
-	ul   = Criação do elemento/Mostra os valores do data
+	@string   array* data = Retorno do banco 
+	@int*     v    = Retorno do input
+	@element* ul   = Criação do elemento/Mostra os valores do data
 **/
 function autoComplete(){
 	const ul = document.createElement('ul');
 	$('.inputs-aviso #cpf').before(ul)
 	ul.setAttribute('id', 'autoComplete')
 	document.getElementById('cpf').addEventListener('input', (v) =>{
-
 		$.ajax({
-			url: '../base/app/buscarPaciente',
+			url: '../base/app/autoComplete',
 			method: "POST",
 			data: {form:v.target.value},
 			dataType: 'text',
 			success: function(data){
 				if(v.target.value > 3){
 					ul.innerHTML = data;
+				}
+			}
+		});
+	});
+	$(document).on('click', 'option', function(v){
+		$.ajax({
+			url: '../base/app/buscarDados',
+			method: "POST",
+			data: {value:v.target.value},
+			dataType: 'text',
+			success: function(data){
+				let form = $('#formP')[0];
+				let val = Object.values(JSON.parse(data)[0]);
+				console.log(val);
+				for(var i=0; i < form.length; i++){
+					if(form[i].type == "text" || form[i].type == "date" || form[i].type == "select-one"){
+						form[i].value = val[i +1]
+					}
 				}
 			}
 		});
