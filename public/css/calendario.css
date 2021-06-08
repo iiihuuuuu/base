@@ -1,0 +1,171 @@
+.calendario{
+    height: 100%;
+}
+.titulo-meses{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    border-top: 3px solid white;
+    background-color: #338eb2;
+    border-radius: 20px;
+    color: #fff;
+}
+.titulo-meses .adicionar_evento, .titulo-meses .pesquisar_consulta{
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    color: #338eb2;
+    transition: .5s;
+}
+.titulo-meses .adicionar_evento:hover{
+    transform: translateY(-5px);
+    transition: .5s;
+}
+.setas i{
+    color: #fff;
+    cursor: pointer;
+}
+/* DIAS */
+
+.dias-meses{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.dias{
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    background: #cccccc;
+    padding: 10px;
+    margin: 2px 5px;
+    height: 120px;
+    flex-basis: 15%;
+    border-radius: 25px;
+}
+.meses{
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+    animation: slideUp .7s;
+}
+
+/* INFOS E MINI CALENDÁRIO */
+
+.container-infos{
+    flex-basis: 30%;
+}
+
+/* POP CADASTRAR CONSULTAS */
+
+#containerModal{
+    display: none;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    background-color: rgba(0,0,0,.2);
+    height: 100%;
+    width: 100%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    animation: puffIn .7s;
+}
+#containerModal #fechar{
+    background: #fff;
+    border-radius: 39px;
+    padding: 10px 14px;
+    position: relative;
+    left: 250px;
+    top: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
+}
+#containerModal #fechar:hover{
+    background-color: red;
+    color: #fff;
+    transition: .5s;
+}
+.modal{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 595px;
+    background-color: #fff;
+    z-index: 2;
+}
+.modal form{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.modal .inputsForm .inputs label{
+    top: -30px;
+}
+.modal form .inputs input, .modal form .inputs select{
+    text-align: center;
+    color: #0f4489;
+    padding: 5px;
+}
+.modal .botoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* ARMAZENAMENTO */
+
+.container-armazenamento{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    width: 73%;
+    height: 125px;
+    max-height: 125px;
+    overflow-y: scroll;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 30%);
+}
+.titulos-armazenamento{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 2px 20px;
+    margin-bottom: 10px;
+    background: #0055a2;
+    color: #fff;
+}
+.filho{
+    display: flex;
+    justify-content: space-around;
+    color: #0055a2;
+    padding: 2px 0px;
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.filho:nth-child(odd){
+    background-color: #fff;
+}
+.filho:nth-child(even){
+    background-color: #867a7a3d;
+}
+.data, .quantidade, .excluir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.data{
+    width: 50px;
+}

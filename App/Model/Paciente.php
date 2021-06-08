@@ -3,68 +3,33 @@
 namespace App\Model;
 use App\Model\Database;
 
-class Paciente extends Database{
+class Paciente{
 
     private $db;
-    private $id;
-
-    public $nome;
-    public $telefone;
-    public $numero;
 
     public function __construct(){
-        parent::__construct();
+        $this->db = new Database();
     }
-    //     public function execute($query, $params = []){
-    //     try {
-    //         $stmt = $this->connection->prepare($query);
-    //         $stmt->execute($params);
-    //         echo "OK";
-    //         return $stmt;
-    //     } catch (PDOException $e) {
-    //         die('ERROR: '.$e->getMessage());
-    //     }
 
-    public function insert($table, $values): string{
-        $fields = array_keys($values);
-        $binds = array_pad([], count($fields), '?');    
-        $query = "INSERT INTO $table (".implode(',', $fields).") VALUES(".implode(',', $binds).")";
-        
-        //Preparando e inserindo
-        try {
-            $stm = $this->connection->prepare($query);
-            $stm->execute(array_values($values));
-            return 'Inserido com Sucesso!';
-        } catch(PDOException $e){
-            die('ERROR: '.$e->getMessage());
-            return 'Erro ao tentar inserir os dados';
+    public function autoComplete($table, $value){
+        if(strlen($value) > 3){
+            $data = $this->db->select($table, "cpf LIKE '%".$value."%'", null, null, 5);
+
+            foreach ($data as $item) {
+                echo "<option value=".$item['id'].">".$item['cpf']."</option>";
+            }
         }
     }
 
-    public function atualizarDados($table, $values, $where, $and = null): string{
-        $and = strlen($and) ? ' AND '.$and : '';
-        $fields = array_keys($values);    
-        $query = "UPDATE $table SET ".implode(" = ?, ", $fields)." = ? WHERE $where $and";
-        
-        //Preparando e inserindo
-        try {
-            $stm = $this->connection->prepare($query);
-            $stm->execute(array_values($values));
-            return 'OK';
-        } catch(PDOException $e){
-            die('ERROR: '.$e->getMessage());
-            return 'Erro ao tentar atualizar';
-        }
+    public function buscarDados($dados){
+        return $this->db->select('paciente', "id = ".$dados);
     }
 
-    public function select($table, $where = null, $order = null, $limit = null, $fields = '*'): array{
-        $where = strlen($where) ? ' WHERE '.$where : '';
-        $order = strlen($order) ? ' ORDER BY '.$order : '';
-        $limit = strlen($limit) ? ' LIMIT '.$limit : '';
-
-        $query = "SELECT $fields FROM $table $where $order $limit";
-        $stm = $this->connection->prepare($query);
-        $stm->execute();
-        return $stm->fetchAll(\PDO::FETCH_ASSOC);
+    public function dadosPaciente($dados){
+        $this->db->insert('paciente', [
+            'nome' => $dados[3]
+        ]);
+        //var_dump($dados);
     }
+
 }

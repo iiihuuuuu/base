@@ -5,12 +5,14 @@ namespace App\Model;
 use \PDO;
 use \PDOException;
 
-abstract class Database{
+class Database{
     
     const HOST = "localhost";
-    const NAME = "db_vacinas";
+    const NAME = "db_amosaude";
     const USER = "root";
     const PASS = "";
+
+    private $connection;
 
     public function __construct(){
         try {
@@ -20,4 +22,57 @@ abstract class Database{
             die('ERROR: '.$e->getMessage());
         }
     }
+
+    public function select($table, $where = null, $and = null, $order = null, $limit = null, $fields = '*'){
+        $where = strlen($where) ? 'WHERE '   .$where : '';
+        $and   = strlen($and)   ? 'AND '     .$and   : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '   .$limit : '';
+
+        $query = "SELECT $fields FROM $table $where $and $order $limit";
+        
+        $stm = $this->connection->prepare($query);
+        $stm->execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function atualizar($table, $values, $where, $and = null): string{
+        $and    = strlen($and) ? ' AND '.$and : '';
+        $fields = array_keys($values);    
+        
+        $query  = "UPDATE $table SET ".implode(" = ?, ", $fields)." = ? WHERE $where $and";
+        
+    }
+
+    public function insert($table, $values){
+        $fields = array_keys($values);
+        $binds  = array_pad([], count($fields), '?');    
+        
+        $query  = "INSERT INTO $table (".implode(',', $fields).") VALUES(".implode(',', $binds).")";
+        
+        try {
+            $stm = $this->connection->prepare($query);
+            $stm->execute(array_values($values));
+            return 'Inserido com Sucesso!';
+        
+        }catch(PDOException $e){
+            die("ERRO: ".$e->getMessage());
+        }
+    }
+
+    public function delete($table, $values){
+        $fields = array_keys($values);
+        echo "DELETE FROM $table WHERE ".implode(" = ? AND ", $fields)." = ?";
+
+        try {
+            $stm = $this->connection->prepare($query);
+            $stm->execute(array_values($values));
+            return "Deletado com sucesso";
+        
+        }catch(PDOException $e){
+            die('Error: '. $e->getMessage());
+            return 'Erro ao tentar deletar os dados';
+        }
+    }
 }
+    

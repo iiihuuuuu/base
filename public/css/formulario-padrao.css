@@ -1,0 +1,62 @@
+.inputsForm input, .inputsForm select{
+    height: 30px;
+    margin: 10px 0px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding: 5px 0px;
+    background-color: transparent;
+}
+.inputsForm input:focus{
+    outline: none;
+    box-shadow: none;
+}
+.inputsForm .inputs label{
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    transition: .5s;
+}
+.inputsForm .inputs select + label{
+    top: 10px;
+}
+.inputsForm input:focus + label{
+    font-weight: bold;
+    transform: translateY(-5px);
+    transition: .5s;
+}
+.inputsForm input:not(:placeholder-shown) + label{
+    font-weight: bold;
+    color: #338eb2;
+    transform: translateY(-5px);
+    transition: .5s;
+}
+.aviso-input{
+    background-color: #338eb2;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+    position: absolute;
+    margin-bottom: 70px;
+    margin-left: -109px;
+    padding: 20px 10px;
+    color: #fff;
+    animation: swap .7s;
+}
+.aviso-input h3{
+    font-size: 12px;
+}
+.aviso-input i{
+    font-size: 31px;
+    margin-bottom: 20px;
+}
+.aviso-input::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #338eb2 transparent transparent transparent;
+  left: 50%;
+  transform: translateX(0%) translateY(520%);
+}
+

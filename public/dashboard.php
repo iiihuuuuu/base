@@ -2,17 +2,15 @@
 <html>
 <head>
 	<title>Dashboard</title>
-	<link rel="stylesheet" type="text/css" href="css/lib/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
-	<link rel="stylesheet" type="text/css" href="css/pacientes.css">
-	<link rel="stylesheet" type="text/css" href="css/animacoes.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/lib/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/formulario-padrao.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/pacientes.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/animacoes.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/calendario.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-	<link rel="stylesheet" href="css/lib/calendarjs.css">
-	
-	<script src="scripts/lib/jquery-3.3.1.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
-	<script src="scripts/lib/calendarjs.js"></script>
+
+	<script src="./public/scripts/lib/jquery-3.3.1.js"></script>
 
 </head>
 <body>
@@ -45,17 +43,18 @@
 				<div class="icone icone-lateral" id="Estoque-icone">
 					<i class="fas fa-cubes"></i>
 					<p>Estoque</p>
-				</div>	
+				</div>
 				<div class="icone icone-lateral" id="Configurações-icone">
 					<i class="fas fa-cog"></i>
 					<p>Configurações</p>
 				</div>
 
-			</div>	
+			</div>
 
 			<div class="logout filhos-menu icone">
-				<i class="fas fa-power-off"></i>
-			</div>	
+				<a href=""><i class="fas fa-power-off"></i></a>
+
+			</div>
 
 		</div>
 
@@ -64,7 +63,7 @@
 			<div class="topo">
 
 				<div class="logo filhos-menu">
-					<img src="imagens/login/logo_branca.png">
+					<img src="./public/imagens/login/logo_branca.png">
 				</div>
 
 				<div id="titulo-pagina" class="nome-pagina filhos-menu">Pacientes</div>
@@ -72,7 +71,7 @@
 				<div class="login filhos-menu">
 					<i class="fas fa-user"></i>
 					<p>Lucas Henrique</p>
-				</div>			
+				</div>
 
 			</div>
 
@@ -86,13 +85,15 @@
 				</div>
 			</div>
 			<div class="col2">
-				
+
 			</div>
 
-		</div>	
+		</div>
 
-	</div>	
-	<script type="text/javascript" src="scripts/geral.js"></script>
-	<script type="text/javascript" src="scripts/pacientes.js"></script>
+	</div>
+	<script type="text/javascript" src="./public/scripts/dashboard.js"></script>
+	<script type="text/javascript" src="./public/scripts/pacientes.js"></script>
+	<script type="text/javascript" src="./public/scripts/calendario.js"></script>
+
 </body>
 </html>

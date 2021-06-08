@@ -19,9 +19,6 @@
 	"require": {
 		"slim/slim": "^3.0",
 		"tuupola/slim-basic-auth": "^3.3",
-		"slim/php-view": "^3.1",
-		"coffeecode/router": "1.0.*",
-		"coffeecode/datalayer": "1.1.*",
-		"league/plates": "v4.0.0-alpha"
+		"slim/php-view": "^3.1"
 	}
 }
