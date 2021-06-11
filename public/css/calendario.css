@@ -1,4 +1,5 @@
 .calendario{
+    padding: 10px;
     height: 100%;
 }
 .titulo-meses{
@@ -31,7 +32,9 @@
 
 .dias-meses{
     width: 100%;
-    height: 100%;
+    max-height: 615px;
+    height: 900px;
+    overflow-y: scroll;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -43,8 +46,8 @@
     background: #cccccc;
     padding: 10px;
     margin: 2px 5px;
-    height: 120px;
-    flex-basis: 15%;
+    height: 17%;
+    flex-basis: 16%;
     border-radius: 25px;
 }
 .meses{
@@ -59,7 +62,7 @@
 /* INFOS E MINI CALENDÁRIO */
 
 .container-infos{
-    flex-basis: 30%;
+    flex-basis: 100%;
 }
 
 /* POP CADASTRAR CONSULTAS */
