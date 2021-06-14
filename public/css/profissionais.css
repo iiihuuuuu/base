@@ -1,0 +1,224 @@
+/* TABS */
+
+.containerProfissionais{
+    height: 100%;
+    padding: 10px 0px;
+}
+.tabs{
+    flex-flow: column;
+    height: 100%;
+}
+.titulo-pagina{
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #338eb2;
+    font-size: 0.6em;
+    padding: 20px;
+    color: #fff;
+}
+.conteudo-profissionais{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 90%;
+}
+
+/* FORMULARIO */
+
+form{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+form label{
+    font-size: 13px;
+    color: #333;
+    z-index: -1;
+}
+input, option, select{
+    text-align: center;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
+input:focus, select:focus{
+     outline: 0;
+}
+select + label, input[type="date"] + label, input[type="password"] + label{
+    position: relative;
+    text-align: left;
+}
+.inputs{
+    display: flex;
+    flex-flow: column-reverse;
+    height: 52px;
+    margin: 2px 0px;
+}
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-size: 2rem 2rem;
+    width: 100%;
+}
+.container-botoes{
+    display: flex;
+    justify-content: center;
+}
+.botoes{
+    display: flex;
+    justify-content: center;
+    flex-basis: 50%;
+    justify-content: space-around;
+}
+.botoes button{
+    background-color: #333;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    width: 150px;
+    padding: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: bold;
+}
+.botoes button:hover{
+    background-color: #338eb2;
+    border: 1px solid #fff;
+    color: #fff;
+    transition: .5s;
+}
+button{
+    outline: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* FORMULARIO PACIENTE */
+
+#Profissionais{
+    display: none;
+    flex-flow: column;
+    height: 100%;
+}
+.formProfissionais{
+    width: 1200px;
+    justify-content: center;
+    padding: 0px;
+    flex-flow: column;
+    flex-grow: 2;
+}
+.formProfissionais .titulo{
+    flex-grow: 1;
+    justify-content: center;
+    align-self: center;
+}
+.formProfissionais .titulo .divisor4{
+    background-color: #fff;
+    width: 65px;
+}
+.formProfissionais .coluna-formulario1, .formProfissionais .coluna-formulario2{
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    padding: 0px 30px;
+}
+.formProfissionais .inputsForm{
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+.formProfissionais .inputsForm .containerInputs{
+    display: flex;
+}
+.formProfissionais .icones{
+    margin: 0px 0px 25px 0px;
+}
+.formProfissionais h1{
+    color: #333;
+}
+
+/* BOTÃO INFOS */
+
+#ativa-info{
+    display: none;
+}
+#ativa-info:checked ~ .info{
+    opacity: 1;
+    transition: 1s;
+}
+#ativa-info:checked ~ .info:before{
+    opacity: 1;
+    transition: 1s;
+}
+.info{
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    top: 190px;
+    right: 20px;
+    width: 200px;
+    height: 72px;
+    background: #ffeb3b78;
+    font-size: 13px;
+    padding: 13px;
+    opacity: 0;
+    line-height: 1.3rem;
+    transition: 1s;
+}
+.info::before{
+  content: '';
+  position: relative;
+  top: -20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 21px 21px 21px;
+  border-color: transparent transparent #ffeb3b78 transparent;
+  left: 20px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 1s;
+}
+.container-explicacao{
+    display: flex;
+    width: 100%;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+.explicacao{
+    margin-right: 43px;
+}
+.explicacao label{
+    cursor: pointer;
+}
+.explicacao label i{
+    color: #338eb2;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* RESPONSIVIDADE */
+
+@media only screen and (max-width: 1280px){
+    .formProfissionais{
+        width: 100%;
+        align-items: center;
+    }
+    .inputsForm{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 800px){
+    .formProfissionais .inputsForm .containerInputs{
+        flex-flow: column;
+    }
+}

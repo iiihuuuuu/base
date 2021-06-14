@@ -5,11 +5,11 @@
 	<link rel="stylesheet" type="text/css" href="./public/css/lib/normalize.css">
 	<link rel="stylesheet" type="text/css" href="./public/css/dashboard.css">
 	<link rel="stylesheet" type="text/css" href="./public/css/formulario-padrao.css">
-	<link rel="stylesheet" type="text/css" href="./public/css/pacientes.css">
 	<link rel="stylesheet" type="text/css" href="./public/css/animacoes.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/pacientes.css">
 	<link rel="stylesheet" type="text/css" href="./public/css/calendario.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/profissionais.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-
 	<script src="./public/scripts/lib/jquery-3.3.1.js"></script>
 
 </head>
@@ -35,6 +35,10 @@
 				<div class="icone icone-lateral" id="Agendamentos-icone">
 					<i class="far fa-calendar-alt"></i>
 					<p>Agendamentos</p>
+				</div>
+				<div class="icone icone-lateral" id="Profissionais-icone">
+					<i class="fas fa-user-plus"></i>
+					<p>Profissionais</p>
 				</div>
 				<div class="icone icone-lateral" id="Finanças-icone">
 					<i class="fas fa-dollar-sign"></i>
@@ -77,22 +81,17 @@
 
 			<div class="col1">
 				<div class="tela" id="Pacientes"><?php require_once 'pacientes.php'; ?></div>
+				<div class="tela" id="Profissionais"><?php require_once 'profissionais.php'; ?></div>
+				<div class="tela" id="Agendamentos"><?php require_once 'calendario.php'; ?></div>
 				<div class="tela" id="Finanças">teste2</div>
 				<div class="tela" id="Estoque">teste3</div>
 				<div class="tela" id="Configurações">teste4</div>
-				<div class="tela" id="Agendamentos">
-					<?php require_once 'calendario.php'; ?>
-				</div>
-			</div>
-			<div class="col2">
-
 			</div>
 
 		</div>
-
 	</div>
 	<script type="text/javascript" src="./public/scripts/dashboard.js"></script>
-	<script type="text/javascript" src="./public/scripts/pacientes.js"></script>
+	<script type="text/javascript" src="./public/scripts/formularios.js"></script>
 	<script type="text/javascript" src="./public/scripts/calendario.js"></script>
 
 </body>

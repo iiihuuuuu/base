@@ -40,16 +40,20 @@
         <form>
             <div class="inputsForm">
                 <div class="inputs inputs-aviso">
+                    <input type="text" class="validar validar-modal" id="paciente" name="paciente" placeholder=" " value=""/>
                     <label>Paciente</label>
-                    <input type="text" class="validar validar-modal" id="paciente" name="paciente" placeholder="" value=""/>
                 </div>
                 <div class="inputs inputs-aviso">
+                    <input type="text" class="validar validar-modal" id="profissional" name="profissional" placeholder=" " value=""/>
                     <label>Profissional</label>
-                    <input type="text" class="validar validar-modal" id="profissional" name="profissional" placeholder="" value=""/>
                 </div>
                 <div class="inputs inputs-aviso validar-modal" id="input-data">
-                    <label>Data</label>
                     <input type="date" class="datas inputs-aviso validar-modal" id="data">
+                    <label>Data</label>
+                </div>
+                <div class="inputs inputs-aviso validar-modal" id="input-data">
+                    <input type="time" class="horario inputs-aviso validar-modal" id="horario">
+                    <label>Horário</label>
                 </div>
             </div>
         </form>
